@@ -134,3 +134,8 @@ There are 2 ways to apply a prefix to a player:
   Prefix.setPrefix(player, adminPrefix);
 
 ```
+
+To update the Tablist Prefixes, use the PrefixHandler class.
+```java
+  PrefixHandler.updateTablist();
+```
