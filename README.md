@@ -124,7 +124,7 @@ if(adminOptional.isPresent()) {
 }
 ```
 
-There are 2 possiblities to apply a prefix to a player:
+There are 2 ways to apply a prefix to a player:
 
 ```java
   Prefix adminPrefix = adminOptional.get();
