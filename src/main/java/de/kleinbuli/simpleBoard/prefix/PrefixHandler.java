@@ -1,8 +1,7 @@
-package de.kleinbuli.simpleBoard;
+package de.kleinbuli.simpleBoard.prefix;
 
-import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
@@ -10,7 +9,8 @@ import org.bukkit.scoreboard.Team;
 public class PrefixHandler {
 
     /**
-     * Aktualisiert die Tablist + Nametags aller Spieler mit individuellem Prefix & Suffix.
+     *  Updates the tablist Prefix of every player and applies it
+     *  to the current Scoreboard of the player.
      */
     public static void updatePrefix() {
         for (Player target : Bukkit.getOnlinePlayers()) {
@@ -18,6 +18,10 @@ public class PrefixHandler {
         }
     }
 
+    /**
+     * Sets up the player team. Breaks if the prefix is null
+     * @param player the player to set up
+     */
     private static void setupPlayerTeam(Player player) {
 
         Scoreboard scoreboard = player.getScoreboard();
@@ -37,7 +41,7 @@ public class PrefixHandler {
         }
 
 
-        team.prefix(prefix.getPrefix());
+        team.prefix(prefix.getPrefix().append(Component.text(" ")));
         team.color(prefix.namedTextColor());
         prefix.options().forEach(team::setOption);
 
