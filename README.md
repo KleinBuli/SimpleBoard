@@ -129,7 +129,8 @@ There are 2 possiblities to apply a prefix to a player:
 ```java
   Prefix adminPrefix = adminOptional.get();
   adminPrefix.applyTo(player);
-
+```
+```java
   Prefix.setPrefix(player, adminPrefix);
 
 ```
